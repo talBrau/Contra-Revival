@@ -45,7 +45,6 @@ public class runningEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            print("Player hit");
             Destroy(gameObject);
         }
 

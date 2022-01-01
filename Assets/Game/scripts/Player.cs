@@ -29,8 +29,15 @@ public class Player : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero; // for movement smothning
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f; // How much to smooth out the movement
     private Transform _shootingPoint; // where the shoot is  being fired from
-
+    private Vector2 originBcSize;
     private int _score = 0;
+    
+    //shield props
+    public float shieldTime = 3; // Player has 3 seconds of shield to begin with
+    private Boolean shieldActive = false;
+    public GameObject shield;
+    
+    
 
     // Animations props
     [SerializeField] Animator animator;
@@ -47,6 +54,7 @@ public class Player : MonoBehaviour
     private bool isNearWaterPlatform = false;
     //audio
     public AudioSource shootSfx;
+    private bool lowered;
 
 
     // Start is called before the first frame update
@@ -55,9 +63,11 @@ public class Player : MonoBehaviour
         gameObject.SetActive(true);
         playerRb = GetComponent<Rigidbody2D>();
         playerBC = GetComponent<BoxCollider2D>();
+        originBcSize = playerBC.size;
         playerRb.freezeRotation = true;
         _shootingPoint = GameObject.Find("shooting point").transform;
         _defConstraints = playerRb.constraints;
+        shield.SetActive(false);
         // animator = GetComponent<Animator>();
     }
 
@@ -94,6 +104,19 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             _isAimingUp = false;
+        }
+
+        if (Input.GetKey(KeyCode.Z) && shieldTime > 0)
+        {
+            shieldTime -= Time.deltaTime;
+            shieldActive = true;
+            shield.SetActive(true);
+            
+        }
+        else
+        {
+            shieldActive = false;
+            shield.SetActive(false);
         }
 
         _direction = Input.GetAxisRaw("Horizontal");
@@ -156,6 +179,23 @@ public class Player : MonoBehaviour
         playerRb.velocity =
             Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+        if (crouch && !lowered)
+        {
+            // transform.position = transform.position + Vector3.down * .5f;
+            playerBC.size = new Vector2(0.35f, 0.1f);
+            lowered = true;
+        }
+
+        if (!crouch)
+        {
+            if (lowered)
+            {
+                // transform.position = transform.position + Vector3.up * .5f;
+                playerBC.size = originBcSize;
+                // playerBC.size = new Vector2(playerBC.size.y, playerBC.size.x);
+                lowered = false;
+            }
+        }
         setAnimationParams();
     }
 
@@ -201,6 +241,7 @@ public class Player : MonoBehaviour
 
 
         animator.SetBool("isCrouching", crouch);
+        
         animator.SetBool("inWater", _onWater);
 
         // animator.SetBool("isRespawning",_isRespawning);
@@ -241,7 +282,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (!_isRespawning && other.CompareTag("enemyBullet"))
+        if (!_isRespawning && other.CompareTag("enemyBullet") && !shieldActive)
         {
             animator.SetTrigger("PlayerHit");
             gameManager.lossLife();
@@ -270,7 +311,7 @@ public class Player : MonoBehaviour
     {
         if (!_isRespawning)
         {
-            if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("enemyBullet") ||
+            if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("enemyBullet")) && !shieldActive ||
                 other.gameObject.name == "lower wall")
             {
                 animator.SetTrigger("PlayerHit");
