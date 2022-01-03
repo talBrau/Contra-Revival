@@ -273,7 +273,10 @@ MonoBehaviour:
   shootingPoint: {fileID: 4788614192525748252}
   bulletParent: {fileID: 0}
   bulletEnemy: {fileID: 0}
+  dieSfx: {fileID: 0}
   animator: {fileID: 0}
+  potionPrefab: {fileID: 7390629529935924063, guid: c40f191b6dc124dd2a1f64bdf48f97b1, type: 3}
+  potionParent: {fileID: 0}
 --- !u!1 &7191815877668075645
 GameObject:
   m_ObjectHideFlags: 0

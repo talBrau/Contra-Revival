@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     //audio
     public AudioSource shootSfx;
     private bool lowered;
+    public int maxShieldTime;
 
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
         _shootingPoint = GameObject.Find("shooting point").transform;
         _defConstraints = playerRb.constraints;
         shield.SetActive(false);
+        shieldTime = maxShieldTime;
         // animator = GetComponent<Animator>();
     }
 
@@ -279,6 +281,13 @@ public class Player : MonoBehaviour
                     _onWater = true;
                 }
             }
+        }
+
+        if (other.gameObject.tag == "potion")
+        {
+            Destroy(other.gameObject);
+            shieldTime = Math.Min(shieldTime + 3, maxShieldTime);
+            
         }
 
 

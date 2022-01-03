@@ -246,6 +246,8 @@ MonoBehaviour:
   bulletEnemy: {fileID: 6469317017467825998, guid: 109ac7095a60f434faca6fd493e1dbda, type: 3}
   dieSfx: {fileID: 7616138017158174114}
   animator: {fileID: 7939076155804231126}
+  potionPrefab: {fileID: 7390629529935924063, guid: c40f191b6dc124dd2a1f64bdf48f97b1, type: 3}
+  potionParent: {fileID: 0}
 --- !u!82 &7616138017158174114
 AudioSource:
   m_ObjectHideFlags: 0

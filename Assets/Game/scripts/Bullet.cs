@@ -108,6 +108,11 @@ public class Bullet : MonoBehaviour
             bulletRb.velocity = Vector2.zero;
             other.gameObject.SetActive(false);
             StartCoroutine(explode());
+            EnemyShoot enemyShoot = other.gameObject.GetComponent<EnemyShoot>();
+            if (enemyShoot!=null && !enemyShoot.isCanon)
+            {
+                gameManager.instantiatePotion(other.transform);
+            }
         }
 
         if (other.gameObject.tag == "border") // if bullet out of frame

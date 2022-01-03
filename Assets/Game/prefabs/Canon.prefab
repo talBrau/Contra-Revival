@@ -275,7 +275,10 @@ MonoBehaviour:
   bulletParent: {fileID: 0}
   bulletEnemy: {fileID: 6469317017467825998, guid: 109ac7095a60f434faca6fd493e1dbda, type: 3}
   dieSfx: {fileID: 4466933394982836235}
+  isCanon: 1
   animator: {fileID: 8682642265130559783}
+  potionPrefab: {fileID: 0}
+  potionParent: {fileID: 0}
 --- !u!82 &4466933394982836235
 AudioSource:
   m_ObjectHideFlags: 0

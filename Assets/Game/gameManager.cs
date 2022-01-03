@@ -17,6 +17,10 @@ public class gameManager : MonoBehaviour
     [SerializeField] private AudioSource EnemyHit;
     private int _playerScore = 0;
     private int lifeIndex = 2;
+
+    [SerializeField] private  GameObject potionPrefab;
+
+    [SerializeField] private  GameObject potionParent;
     // public Animator PlayerAnim;
 
     // Start is called before the first frame update
@@ -81,5 +85,11 @@ public class gameManager : MonoBehaviour
     public static int getPlayerScore()
     {
         return _shared._playerScore;
+    }
+
+    public static void instantiatePotion(Transform transform)
+    {
+        Instantiate(_shared.potionPrefab, transform.position, transform.rotation, _shared.potionParent.transform);
+
     }
 }

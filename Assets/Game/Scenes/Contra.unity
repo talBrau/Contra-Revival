@@ -740,7 +740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129.89, y: 353.94}
+  m_AnchoredPosition: {x: 288.9, y: 353.94}
   m_SizeDelta: {x: 155.63, y: 26.939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126580073
@@ -5351,7 +5351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491599039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.040503, y: -1.9656166, z: -24.952137}
+  m_LocalPosition: {x: 19.98, y: -1.8, z: -24.952137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1102540818}
@@ -6858,6 +6858,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+--- !u!1 &1978425500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978425501}
+  m_Layer: 0
+  m_Name: potions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1978425501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978425500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17345685, y: 0.08849958, z: 29.403828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1985525529
 GameObject:
   m_ObjectHideFlags: 0
@@ -7237,6 +7267,8 @@ MonoBehaviour:
   - {fileID: 853170276}
   - {fileID: 763708673}
   EnemyHit: {fileID: 2074424781}
+  potionPrefab: {fileID: 7390629529935924063, guid: c40f191b6dc124dd2a1f64bdf48f97b1, type: 3}
+  potionParent: {fileID: 1978425500}
 --- !u!4 &2074424780
 Transform:
   m_ObjectHideFlags: 0
@@ -7440,12 +7472,13 @@ MonoBehaviour:
   bulletParent: {fileID: 1767284674}
   crouch: 0
   m_MovementSmoothing: 0.05
-  shieldTime: 3
+  shieldTime: 5
   shield: {fileID: 1699753733}
   animator: {fileID: 795071590}
   shootDirection: 0
   isShooting: 0
   shootSfx: {fileID: 1327628492}
+  maxShieldTime: 5
 --- !u!4 &2130802112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1813554512122277884, guid: 020f9a8ed076f8e4e8edb245ed5daf9f, type: 3}

@@ -18,15 +18,20 @@ public class EnemyShoot : MonoBehaviour
 
     private bool isFacingLeft = true;
     private bool _isRespawning = false;
+    public bool isCanon;
 
     [SerializeField] private Animator animator;
 
     private static readonly int AngleToPlayer = Animator.StringToHash("angleToPlayer");
 
+    [SerializeField] private GameObject potionPrefab;
+    [SerializeField] private GameObject potionParent;
+
     // Start is called before the first frame update
     void Start()
     {
         bulletParent = GameObject.Find("Bullets");
+        potionParent = GameObject.Find("potions");
         // dieSfx = GetComponent<AudioSource>();
     }
 
@@ -110,5 +115,11 @@ public class EnemyShoot : MonoBehaviour
         gameObject.SetActive(false);
     }
 
- 
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (potionPrefab != null && col.gameObject.tag == "PlayerBullet")
+    //     {
+    //         Instantiate(potionPrefab, transform.position, transform.rotation, potionParent.transform);
+    //     }
+    // }
 }
