@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -43,7 +40,7 @@ public class WelcomeManager : MonoBehaviour
             {
                 Application.Quit();
 
-                UnityEditor.EditorApplication.isPlaying = false;
+                // UnityEditor.EditorApplication.isPlaying = false;
             }
         }
 

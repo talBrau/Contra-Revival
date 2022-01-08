@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class PlayerTut : MonoBehaviour
 {
     //components and mask
     [SerializeField] private Rigidbody2D playerRb;
@@ -76,12 +76,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerRb.position.x >= 147)
-        {
-            gameObject.SetActive(false);
-            gameManager.playerWon();
-            Invoke("Restart", 2);
-        }
+       
 
         if (_isGrounded)
         {
@@ -259,13 +254,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // if (other.gameObject.CompareTag("platform") && airTime == false)
-        // {
-        //     _isGrounded = true;
-        // }
+       
         if (other.gameObject.name == "lower wall")
         {
-            // gameObject.SetActive(false);
             onPlatform = false;
             gameObject.transform.position = _groundPos;
             animator.SetTrigger("outOfBounds");

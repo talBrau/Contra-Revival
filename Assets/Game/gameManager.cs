@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 // using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class gameManager : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] private UnityEvent playerHit;
     [SerializeField] private UnityEvent playerReturn;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     [SerializeField] private GameObject[] lifes;
     [SerializeField] private AudioSource EnemyHit;
@@ -27,13 +28,20 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         _shared = this;
+        _shared.scoreText.text = "Score: " + _shared._playerScore;
+
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+
+        }
     }
 
     public static void playerWon()
@@ -80,6 +88,7 @@ public class gameManager : MonoBehaviour
     public static void increaseScore()
     {
         _shared._playerScore += 1000;
+        _shared.scoreText.text = "Score: " + _shared._playerScore;
     }
 
     public static int getPlayerScore()
