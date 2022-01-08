@@ -43,7 +43,7 @@ public class TutManager : MonoBehaviour
         if (state == 1 && instructions[state].activeSelf) //jump
         {
             keys[4].GetComponent<SpriteRenderer>().color = new Color(200,0,0);
-            if (player.GetComponent<Rigidbody2D>().velocity.y != 0)
+            if (Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.DownArrow))
             {
                 keys[4].GetComponent<SpriteRenderer>().color = Color.white;
                 StartCoroutine(changeState(2));

@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Game/Scenes/Contra.unity
-    guid: 675624ebd68f82740981a307841003f0
-  - enabled: 1
     path: Assets/Game/Scenes/Welcome.unity
     guid: 5d50c4069df91405083de404a190c204
   - enabled: 1
-    path: Assets/Game/Scenes/GameOver.unity
-    guid: c1640e099faed4b609af23d4eda909e6
-  - enabled: 1
     path: Assets/Game/Scenes/OnBoarding.unity
     guid: adc662b453e954fbe9c348966c138c1d
+  - enabled: 1
+    path: Assets/Game/Scenes/Contra.unity
+    guid: 675624ebd68f82740981a307841003f0
+  - enabled: 1
+    path: Assets/Game/Scenes/GameOver.unity
+    guid: c1640e099faed4b609af23d4eda909e6
   m_configObjects: {}
