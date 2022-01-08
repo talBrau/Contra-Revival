@@ -34,7 +34,7 @@ public class WelcomeManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
         {
-            if(_playOrQuit){SceneManager.LoadScene("Contra");
+            if(_playOrQuit){SceneManager.LoadScene("OnBoarding");
             }
             else
             {
