@@ -11,7 +11,7 @@ public class TutManager : MonoBehaviour
     [SerializeField] private GameObject[] instructions; //state - index, 7-goodjob
     private int state = 0; // 0 - move, 1- jump, 2 - crouch, 3-shoot, 4 - shield, 5- decend
 
-    [SerializeField] private GameObject curPlatform;
+    [SerializeField] private GameObject[] curPlatform;
     // Start is called before the first frame update
     
     void Start()
@@ -91,13 +91,18 @@ public class TutManager : MonoBehaviour
             keys[3].GetComponent<SpriteRenderer>().color = new Color(200,0,0);
             keys[4].GetComponent<SpriteRenderer>().color = new Color(200,0,0);
 
-            if (curPlatform.GetComponent<PlatformEffector2D>().rotationalOffset != 0)
+            for (int i = 0; i < 4; i++)
             {
-                instructions[state].SetActive(false);
-                keys[3].GetComponent<SpriteRenderer>().color = Color.white;
-                keys[4].GetComponent<SpriteRenderer>().color = Color.white;
-                StartCoroutine(startGame(2));
+                if (curPlatform[i].GetComponent<PlatformEffector2D>().rotationalOffset != 0)
+                {
+                    instructions[state].SetActive(false);
+                    keys[3].GetComponent<SpriteRenderer>().color = Color.white;
+                    keys[4].GetComponent<SpriteRenderer>().color = Color.white;
+                    StartCoroutine(startGame(2));
+                    break;
+                }
             }
+           
         }
     }
 

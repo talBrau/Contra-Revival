@@ -1294,7 +1294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -1350,6 +1350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+--- !u!1 &915286366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8710859184553442951, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+  m_PrefabInstance: {fileID: 915286365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947297903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,11 +1382,11 @@ Transform:
   m_LocalPosition: {x: 1.488565, y: -1.3168054, z: 53.36563}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 323204218}
-  - {fileID: 1404431947}
   - {fileID: 24377246}
   - {fileID: 1789360350}
+  - {fileID: 323204218}
   - {fileID: 2031703191}
+  - {fileID: 1404431947}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2890,7 +2895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -2946,6 +2951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+--- !u!1 &1418212728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8710859184553442951, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+  m_PrefabInstance: {fileID: 1418212727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427610901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4308,7 +4318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -4794,7 +4804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -4850,6 +4860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+--- !u!1 &1823704917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8710859184553442951, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
+  m_PrefabInstance: {fileID: 1823704916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824072266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,7 +4982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8710859184553442949, guid: e4ad7b7774efdc54b8f7ca7165547eaf, type: 3}
       propertyPath: m_LocalScale.x
@@ -5152,7 +5167,11 @@ MonoBehaviour:
   - {fileID: 1811789734}
   - {fileID: 449549508}
   - {fileID: 564907697}
-  curPlatform: {fileID: 1225732468}
+  curPlatform:
+  - {fileID: 1225732468}
+  - {fileID: 915286366}
+  - {fileID: 1418212728}
+  - {fileID: 1823704917}
 --- !u!4 &1922680925
 Transform:
   m_ObjectHideFlags: 0

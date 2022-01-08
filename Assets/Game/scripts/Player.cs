@@ -377,4 +377,9 @@ public class Player : MonoBehaviour
     {
         return crouch;
     }
+
+    public bool isOnPlatform()
+    {
+        return onPlatform;
+    }
 }
