@@ -1,4 +1,17 @@
-# Assignment 4b: 80’s Upgrade
-Instructions can be found in the _brief_ handed out in the lesson.
+![Project Image](https://i.ytimg.com/vi/k7vcUei5u2E/maxresdefault.jpg)
 
-Duplicate `Assets` directory from _part a_ to _part b_ as your starting point.
+---
+
+## Description
+
+A revival of the legendary game from the 80's: 'Contra'
+
+#### Technologies
+
+- Unity engine
+- C#
+- Adobe Creative Suite
+
+![Project Image](https://retroachievements.org/Images/035409.png)
+
+[Back To The Top](#read-me-template)
